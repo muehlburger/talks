@@ -1,0 +1,59 @@
+Go Intro
+How to get started
+15:00 14 Feb 2019
+Tags: go, golang, intro
+
+Herbert Mühlburger
+Solution Architect, BearingPoint Technology
+herbert.muehlburger@bearingpoint.com
+@hmuehlburger
+
+* Title of slide or section (must have asterisk)
+
+Some Text
+
+** Subsection
+
+- bullets
+- more bullets
+- a bullet with
+
+* Sub-subsection
+
+** Subsection
+
+Some More text
+
+  Preformatted text
+  is indented (however you like)
+
+* Further Text, including invocations like:
+
+* Code
+
+.code x.go /^func main/,/^}/
+
+* Play
+
+.play x.1.go
+
+* Images
+
+.image https://golang.org/doc/gopher/frontpage.png
+
+* Background Image
+.background https://golang.org/doc/gopher/frontpage.png
+
+* Iframe
+.iframe https://www.bearingpoint.com/en/
+
+* Links
+.link https://www.bearingpoint.com BearingPoint
+
+* Html File
+.html file.html
+
+* Caption
+.caption _Gopher_ by [[https://www.instagram.com/reneefrench/][Renée French]]
+
+Again, more text

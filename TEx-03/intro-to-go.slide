@@ -1,59 +1,54 @@
-Go Intro
-How to get started
-15:00 14 Feb 2019
+Go - An Introduction
+TEx-03
+14:00 14 Feb 2019
 Tags: go, golang, intro
 
-Herbert Mühlburger
-Solution Architect, BearingPoint Technology
-herbert.muehlburger@bearingpoint.com
-@hmuehlburger
+Herbert Mühlburger & Rene Weselowski
+BearingPoint Technology GmbH
 
-* Title of slide or section (must have asterisk)
+* Gopher
 
-Some Text
+.image img/gopher.png 300 _
 
-** Subsection
+.caption By [https://gopherize.me Gopherize.me
 
-- bullets
-- more bullets
-- a bullet with
+* Notes
 
-* Sub-subsection
+The slides are available on [[http://talks.godoc.org/github.com/muehlburger/talks/TEx-03/intro-to-go.slide]]
 
-** Subsection
+Most of the code examples won't run except locally.
 
-Some More text
+The playground runs Go 1.8.
 
-  Preformatted text
-  is indented (however you like)
+* Agenda
 
-* Further Text, including invocations like:
+- History, Philosophy, Simplicity of Go
+- Go Microservice Simpler Microservice Use Case
+- The Standard Library
+- The Runtime
+- The Tooling
+- The Community
 
-* Code
+* Hello World
 
-.code x.go /^func main/,/^}/
+.play hello-world.go /^package/,/^}/
 
-* Play
+* Concurrency in Go
 
-.play x.1.go
+CSP by C.A.R. Hoare as foundation.
 
-* Images
+.image img/csp.png _ 400
+.caption [[http://cs2.ist.unomaha.edu/~stanw/papers/p666-hoare.pdf][Communicating Sequencial Processes]]
 
-.image https://golang.org/doc/gopher/frontpage.png
+* Channels
 
-* Background Image
-.background https://golang.org/doc/gopher/frontpage.png
+- Unbuffered Channels
+- Buffered Channels
 
-* Iframe
-.iframe https://www.bearingpoint.com/en/
+* Tooling
 
-* Links
-.link https://www.bearingpoint.com BearingPoint
-
-* Html File
-.html file.html
-
-* Caption
-.caption _Gopher_ by [[https://www.instagram.com/reneefrench/][Renée French]]
-
-Again, more text
+- gofmt
+- goimport
+- go run
+- go build
+- 

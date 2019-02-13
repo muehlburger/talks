@@ -6,11 +6,11 @@ Tags: go, golang, intro
 Herbert Mühlburger & Rene Weselowski
 BearingPoint Technology GmbH
 
-* Gopher
+* Go Gopher
 
 .image img/gopher.png 300 _
 
-.caption By [https://gopherize.me Gopherize.me
+.caption By [[https://gopherize.me][Gopherize.me]]
 
 * Notes
 
@@ -22,16 +22,30 @@ The playground runs Go 1.8.
 
 * Agenda
 
-- History, Philosophy, Simplicity of Go
-- Go Microservice Simpler Microservice Use Case
+- Why Go?
+- The Language
 - The Standard Library
-- The Runtime
 - The Tooling
-- The Community
+- Go Microservice Simpler Microservice Use Case
 
 * Hello World
 
-.play hello-world.go /^package/,/^}/
+.play code/hello/hello-world.go /^package/,/^}/
+
+.link https://gobyexample.com Go by Example
+
+* Simple HTTP GET Request
+
+.play code/http/http-get.go /^package/,/^}/
+
+* Why Go?
+
+- efficient compilation
+  - Go creates compiled programs
+  - there is a garbage collector (GC)
+  - there is no virtual machine
+- efficient execution
+- ease of programming
 
 * Concurrency in Go
 
@@ -51,4 +65,10 @@ CSP by C.A.R. Hoare as foundation.
 - goimport
 - go run
 - go build
-- 
+- GOOS=windows go build
+- GOOS=linux go build
+- go install
+- go get
+- go list
+
+go list -f '{{ join .Imports "\n"}}'

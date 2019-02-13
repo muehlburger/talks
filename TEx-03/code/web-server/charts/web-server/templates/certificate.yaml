@@ -1,0 +1,22 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: {{ include "web-server.name" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "web-server.name" . }}
+    helm.sh/chart: {{ include "web-server.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  secretName: {{ include "web-server.name" . }}
+  dnsNames:
+  - web-server.dev.gc.bearingpoint.com
+  acme:
+    config:
+    - http01:
+        ingressClass: nginx
+      domains:
+      - web-server.dev.gc.bearingpoint.com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer

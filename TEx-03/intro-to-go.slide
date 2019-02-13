@@ -30,13 +30,13 @@ The playground runs Go 1.8.
 
 * Hello World
 
-.play code/hello/hello-world.go /^package/,/^}/
+.play code/hello-world/main.go /^package/,/^}/
 
 .link https://gobyexample.com Go by Example
 
 * Simple HTTP GET Request
 
-.play code/http/http-get.go /^package/,/^}/
+.play code/http/main.go /^package/,/^}/
 
 * Why Go?
 

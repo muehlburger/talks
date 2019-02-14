@@ -1,4 +1,4 @@
-Go - An Introduction
+Introduction to Golang (Go)
 TEx-03
 14:00 14 Feb 2019
 Tags: go, golang, intro
@@ -6,69 +6,95 @@ Tags: go, golang, intro
 Herbert Mühlburger & Rene Weselowski
 BearingPoint Technology GmbH
 
-* Go Gopher
+* Go
 
-.image img/gopher.png 300 _
+* Gopher
 
-.caption By [[https://gopherize.me][Gopherize.me]]
+.image img/gopher.jpg 300 _
+.caption [[https://gopherize.me][Gopherize.me]]
 
 * Notes
 
 The slides are available on [[http://talks.godoc.org/github.com/muehlburger/talks/TEx-03/intro-to-go.slide]]
 
-Most of the code examples won't run except locally.
-
-The playground runs Go 1.8.
-
 * Agenda
 
 - Why Go?
-- The Language
-- The Standard Library
-- The Tooling
-- Go Microservice Simpler Microservice Use Case
+- Who uses Go?
+- How to get started?
+- How to write and deploy a Microservice in Go with Docker, Helm, GCP
+
+* Why Golang?
+
+.link https://docs.google.com/presentation/d/1x_mtMIBbxQU0zLmxgPSvZ0GFaRrfOOjneeNeahLQcto/edit#slide=id.p Why Go by Todd McLeod
+
+* Who uses Go?
+
+.link https://github.com/golang/go/wiki/GoUsers GoUsers
+.link https://github.com/avelino/awesome-go Awesome-Go
+
+- Kubernetes, docker, moby, etcd, terraform, prometheus, helm, ...
+
+* Getting Started
+
+.link https://golang.org golang.org
+.link https://tour.golang.org tour.golang.org
+.link http://www.golangbootcamp.com/book/basics The basics
+.link https://gobyexample.com Go by Example
 
 * Hello World
 
 .play code/hello-world/main.go /^package/,/^}/
 
-.link https://gobyexample.com Go by Example
+* Go Keywords
 
-* Simple HTTP GET Request
+The Go language is simple, and contains small set of [[https://golang.org/ref/spec#Keywords][keywords]].
 
-.play code/http/main.go /^package/,/^}/
-
-* Why Go?
-
-- efficient compilation
-  - Go creates compiled programs
-  - there is a garbage collector (GC)
-  - there is no virtual machine
-- efficient execution
-- ease of programming
-
-* Concurrency in Go
-
-CSP by C.A.R. Hoare as foundation.
-
-.image img/csp.png _ 400
-.caption [[http://cs2.ist.unomaha.edu/~stanw/papers/p666-hoare.pdf][Communicating Sequencial Processes]]
-
-* Channels
-
-- Unbuffered Channels
-- Buffered Channels
+    break        default      func         interface    select
+    case         defer        go           map          struct
+    chan         else         goto         package      switch
+    const        fallthrough  if           range        type
+    continue     for          import       return       var
 
 * Tooling
 
-- gofmt
-- goimport
 - go run
+- go test
 - go build
 - GOOS=windows go build
 - GOOS=linux go build
 - go install
 - go get
+- gofmt
+- goimport
 - go list
 
 go list -f '{{ join .Imports "\n"}}'
+
+* Simple HTTP Client
+
+.play code/http/main.go /^package/,/^}/
+
+* Simple HTTP Server
+
+* Simple REST API
+
+.play code/web-server/main.go /^package/,/^}/
+
+* Resources
+
+.link https://www.youtube.com/channel/UC_BzFbxG2za3bp5NRRRXJSw JustForFunc: Programming in Go
+.link https://www.udemy.com/learn-how-to-code/ Learn How To Code: Google's Go (golang) Programming Language
+.link https://www.udemy.com/go-programming-language/ Web Development w/ Google’s Go (golang) Programming Language
+
+.link https://gobyexample.com/ Go By Example
+.link https://github.com/spf13/cobra A Commander for modern Go CLI interactions
+
+Interesting other projects:
+.link https://gobot.io/ GOBOT
+.link https://gocv.io/ GoCV
+
+* Books
+
+.image img/gopl.png _ 400 
+.link http://www.gopl.io

@@ -7,16 +7,16 @@ import (
 	"net/http"
 )
 
-type movie struct {
+type Movie struct {
 	Title  string
 	Year   int `json:"released"`
 	Actors []string
 }
 
-var movies = []movie{
+var movies = []Movie{
 	{Title: "The Matrix", Year: 1996, Actors: []string{"Keanu Reeves", "Carrie Moss"}},
 	{Title: "Matrix Reloaded", Year: 2003, Actors: []string{"Monica Bellucci", "Keanu Reeves"}},
-	{Title: "The Rock", Year: 1999, Actors: []string{"Sean Connery", "Niclas Cage"}},
+	//	{Title: "The Rock", Year: 1999, Actors: []string{"Sean Connery", "Niclas Cage"}},
 }
 
 func main() {

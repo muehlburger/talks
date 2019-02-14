@@ -75,9 +75,9 @@ go list -f '{{ join .Imports "\n"}}'
 
 .play code/http/main.go /^package/,/^}/
 
-* Simple HTTP Server
+* Develop simple Go Microservice
 
-* Simple REST API
+1. Create main.go
 
 .play code/web-server/main.go /^package/,/^}/
 

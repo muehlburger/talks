@@ -12,7 +12,7 @@ func main() {
 	http.HandleFunc("/", rootHandler)
 	http.HandleFunc("/movies", movieHandler)
 
-	fmt.Printf("The web-server is live at http://%s.", "127.0.0.1:3000")
+	fmt.Printf("The web-server is live at http://%s", "127.0.0.1:3000")
 	log.Fatal(http.ListenAndServe("127.0.0.1:3000", nil))
 }
 

@@ -9,7 +9,6 @@ import (
 
 // Movie stores data for a movie.
 func main() {
-	mux := http.DefaultServeMux
 	http.HandleFunc("/", rootHandler)
 	http.HandleFunc("/movies", movieHandler)
 

@@ -77,9 +77,15 @@ go list -f '{{ join .Imports "\n"}}'
 
 * Develop simple Go Microservice
 
-1. Create main.go
+1. Create Go App
+- Create main.go
+- add Movie struct
 
-.play code/web-server/main.go /^package/,/^}/
+2. Create Dockerfile
+3. Create Helmchart and modify values.yaml
+4. Install/Upgrade helm chart
+5. Call endpoint
+6. Start with 1
 
 * Resources
 

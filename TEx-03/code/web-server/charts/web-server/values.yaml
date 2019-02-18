@@ -6,8 +6,8 @@ replicaCount: 1
 
 image:
   repository: eu.gcr.io/platformers/web-server
-  tag: latest
-  pullPolicy: IfNotPresent
+  tag: 0.0.2
+  pullPolicy: Always
 
 nameOverride: ""
 fullnameOverride: ""

@@ -13,10 +13,9 @@ type Movie struct {
 	Actors []string
 }
 
-var movies = []Movie{
+var db = []Movie{
 	{Title: "The Matrix", Year: 1996, Actors: []string{"Keanu Reeves", "Carrie Moss"}},
 	{Title: "Matrix Reloaded", Year: 2003, Actors: []string{"Monica Bellucci", "Keanu Reeves"}},
-	//	{Title: "The Rock", Year: 1999, Actors: []string{"Sean Connery", "Niclas Cage"}},
 }
 
 func main() {
@@ -33,5 +32,5 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 
 func movieHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(movies)
+	json.NewEncoder(w).Encode(db)
 }

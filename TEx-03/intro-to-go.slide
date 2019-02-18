@@ -1,28 +1,28 @@
-Introduction to Golang (Go)
-TEx-03
+Introduction to Go
+Talk at TEx-03 by BearingPoint Technology GmbH
 14:00 14 Feb 2019
 Tags: go, golang, intro
 
-Herbert Mühlburger & Rene Weselowski
-BearingPoint Technology GmbH
+Herbert Mühlburger
+Solution Architect
+@hmuehlburger
+https://blog.muehlburger.at
 
-* Go
+* Notes
+
+- The slides are available [[http://talks.godoc.org/github.com/muehlburger/talks/TEx-03/intro-to-go.slide][here]] and source code on [[https://github.com/muehlburger/talks][Github]].
 
 * Gopher
 
 .image img/gopher.jpg 300 _
 .caption [[https://gopherize.me][Gopherize.me]]
 
-* Notes
-
-The slides are available on [[http://talks.godoc.org/github.com/muehlburger/talks/TEx-03/intro-to-go.slide]]
-
 * Agenda
 
 - Why Go?
 - Who uses Go?
 - How to get started?
-- How to write and deploy a Microservice in Go with Docker, Helm, GCP
+- Simple RESTful Microservice using Go, Docker, helm, GCP
 
 * Why Golang?
 
@@ -35,12 +35,14 @@ The slides are available on [[http://talks.godoc.org/github.com/muehlburger/talk
 
 - Kubernetes, docker, moby, etcd, terraform, prometheus, helm, ...
 
-* Getting Started
+* How to get started?
 
 .link https://golang.org golang.org
 .link https://tour.golang.org tour.golang.org
+.link https://www.youtube.com/channel/UC_BzFbxG2za3bp5NRRRXJSw JustForFunc: Programming in Go
 .link http://www.golangbootcamp.com/book/basics The basics
 .link https://gobyexample.com Go by Example
+
 
 * Hello World
 
@@ -75,19 +77,64 @@ go list -f '{{ join .Imports "\n"}}'
 
 .play code/http/main.go /^package/,/^}/
 
-* Develop simple Go Microservice
+* Simple Go Microservice
 
-1. Create Go App
-- Create main.go
-- add Movie struct
+* Create Handlers to handle HTTP Requests
 
-2. Create Dockerfile
-3. Create Helmchart and modify values.yaml
+We will create two routes, one for root and one for movies:
+
+- /
+- /movies
+
+The first route will serve just the current URL.Path.
+The second route will serve a list of movies.
+
+* Create a handler function to serve the root 
+
+Go uses Handler functions to serve HTTP Requests. Each HTTP Request is handled in a seperate goroutine.
+
+.play code/web-server/main.go /^func rootHandler/,/^}/
+
+This function returns the current URL path.
+
+* Create a handler function to serve a list of Movies
+
+Go uses structs to group data (similar to Classes in Java, C++ or structs in C)
+
+.code code/web-server/main.go /^type Movie/,/^}/
+
+Define a slice of Movies called _db_ to simulate a database containing movies:
+
+.code code/web-server/main.go /^var db/,/^}/
+
+* Create a handler function to serve a list of Movies
+
+Create a handler function serve movies:
+
+.code code/web-server/main.go /^func movieHandler/,/^}/
+
+* Create func main.go and register handler function to routes:
+
+.play code/web-server/main.go /^func main()/,/^}/
+
+This registers the handler functions to serve specific routes and starts serving HTTP traffic.
+
+* Create and build Docker container
+
+2. Create and build container
+
+    docker build -t web-server:0.0.1 .
+    docker push ...
+
+3. Create Helmchart and edit _values.yaml_
+
+    helm create web-server
+
 4. Install/Upgrade helm chart
-5. Call endpoint
-6. Start with 1
 
-* Resources
+    helm install charts/web-server -n web-server
+
+* Further Resources
 
 .link https://www.youtube.com/channel/UC_BzFbxG2za3bp5NRRRXJSw JustForFunc: Programming in Go
 .link https://www.udemy.com/learn-how-to-code/ Learn How To Code: Google's Go (golang) Programming Language
